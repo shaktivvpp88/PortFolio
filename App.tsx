@@ -10,7 +10,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import SpotlightCursor from "./components/SpotlightCursor";
-import ChatWidget from "./components/ChatWidget";
+// import ChatWidget from "./components/ChatWidget";
 
 function App() {
   return (
@@ -42,7 +42,7 @@ function App() {
         </div>
 
         <ScrollToTop />
-        <ChatWidget />
+        {/* <ChatWidget /> */}
       </div>
     </ThemeProvider>
   );
