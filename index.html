@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shakti Saxena | Full-Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Updated Fonts: Space Grotesk for Headings, Plus Jakarta Sans for Body -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              primary: '#6366f1', // Indigo 500
+              secondary: '#a855f7', // Purple 500
+              accent: '#06b6d4', // Cyan 500
+              
+              // Semantic Colors (Mapped to CSS Variables)
+              dark: 'rgb(var(--bg-main) / <alpha-value>)',
+              card: 'rgb(var(--bg-card) / <alpha-value>)',
+              'card-hover': 'rgb(var(--bg-card-hover) / <alpha-value>)',
+              'primary-text': 'rgb(var(--text-primary) / <alpha-value>)',
+              'secondary-text': 'rgb(var(--text-secondary) / <alpha-value>)',
+              'border-subtle': 'rgb(var(--border-color) / <alpha-value>)',
+            },
+            backgroundImage: {
+              'grid-pattern': "linear-gradient(to right, rgb(var(--grid-color)) 1px, transparent 1px), linear-gradient(to bottom, rgb(var(--grid-color)) 1px, transparent 1px)",
+              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+              'conic-gradient': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'scroll': 'scroll 40s linear infinite',
+              'scroll-reverse': 'scrollReverse 40s linear infinite',
+              'gradient-x': 'gradient-x 8s ease infinite',
+              'shimmer': 'shimmer 2.5s linear infinite',
+              'slide-down': 'slideDown 0.8s ease-out forwards',
+              'drop-line': 'dropLine 1.5s ease-in-out infinite',
+              'slide-right': 'slideRight 8s linear infinite',
+              'blob': 'blob 10s infinite',
+              'fade-in': 'fadeIn 0.3s ease-out forwards',
+              'spotlight': 'spotlight 2s ease .75s 1 forwards',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              scroll: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' },
+              },
+              scrollReverse: {
+                '0%': { transform: 'translateX(-50%)' },
+                '100%': { transform: 'translateX(0)' },
+              },
+              'gradient-x': {
+                '0%, 100%': {
+                  'background-size': '200% 200%',
+                  'background-position': 'left center'
+                },
+                '50%': {
+                  'background-size': '200% 200%',
+                  'background-position': 'right center'
+                },
+              },
+              shimmer: {
+                '0%': { transform: 'translateX(-100%)' },
+                '100%': { transform: 'translateX(100%)' }
+              },
+              slideDown: {
+                '0%': { transform: 'translateY(-100%)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              dropLine: {
+                '0%': { transform: 'translateY(-100%)', opacity: '0' },
+                '50%': { opacity: '1' },
+                '100%': { transform: 'translateY(100%)', opacity: '0' },
+              },
+              slideRight: {
+                '0%': { transform: 'translateX(-100%)' },
+                '100%': { transform: 'translateX(100%)' }
+              },
+              spotlight: {
+                "0%": {
+                  opacity: 0,
+                  transform: "translate(-50%, -150%) scale(0.5)",
+                },
+                "100%": {
+                  opacity: 1,
+                  transform: "translate(-50%, 0) scale(1)",
+                },
+              },
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      :root {
+        /* Light Mode Variables - Crisp & Clean */
+        --bg-main: 250 250 250; 
+        --bg-card: 255 255 255;
+        --bg-card-hover: 248 250 252;
+        --text-primary: 23 23 23; 
+        --text-secondary: 82 82 82; 
+        --border-color: 229 229 229; 
+        --grid-color: 229 229 229;
+        --scrollbar-thumb: 200 200 200;
+        --scrollbar-hover: 160 160 160;
+      }
+      
+      .dark {
+        /* Z Dark Theme - Deep, Efficient, Modern */
+        --bg-main: 5 5 5; /* Almost Pure Black */
+        --bg-card: 10 10 10; /* Very subtle separation */
+        --bg-card-hover: 18 18 18;
+        --text-primary: 250 250 250; /* High contrast white */
+        --text-secondary: 163 163 163; /* Neutral 400 */
+        --border-color: 38 38 38; /* Neutral 800 */
+        --grid-color: 23 23 23; /* Very subtle grid */
+        --scrollbar-thumb: 64 64 64;
+        --scrollbar-hover: 100 100 100;
+      }
+
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        overflow-x: hidden;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Space Grotesk', sans-serif;
+      }
+      html {
+        scroll-padding-top: 100px; /* Ensures fixed navbar doesn't cover section headers */
+      }
+      .font-mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgb(var(--bg-main));
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgb(var(--scrollbar-thumb));
+        border-radius: 4px;
+        border: 2px solid rgb(var(--bg-main));
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(var(--scrollbar-hover));
+      }
+      .glass {
+        background: rgba(var(--bg-card), 0.6);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(var(--border-color), 0.5);
+      }
+      .bento-card {
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      .bento-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(99, 102, 241, 0.3);
+        box-shadow: 0 0 30px -10px rgba(99, 102, 241, 0.15);
+      }
+      /* Noise Texture */
+      .bg-noise {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 50;
+        opacity: 0.04;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        mix-blend-mode: overlay;
+      }
+      /* Hollow Text Utility */
+      .text-outline {
+        -webkit-text-stroke: 1px rgba(23, 23, 23, 0.15); /* Darker stroke for light mode */
+        color: transparent;
+      }
+      .dark .text-outline {
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
+        color: transparent;
+      }
+      
+      /* Pause animations on hover for better UX */
+      .hover\:pause:hover {
+        animation-play-state: paused !important;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.32.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-dark text-secondary-text antialiased selection:bg-primary/30 selection:text-white transition-colors duration-300">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
